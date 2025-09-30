@@ -83,19 +83,19 @@ form button:hover {
 section {
   margin-top: 25px;
 }
-
-/* Akan name result */
 #akan-name {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #e74c3c;
-  margin-top: 10px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
+  margin-top: 20px;
+  font-size: 1.5rem;   /* make text bigger */
+  font-weight: bold;   /* bold text */
+  color: darkgreen;    /* text color */
+  text-align: center;  /* center the text */
+  padding: 10px;
+  border: 2px solid #333;  /* optional border */
+  border-radius: 8px;      /* rounded corners */
+  background-color: #f0f0f0; 
 }
 
-/* Show result (fades in) */
-#akan-name.show {
-  opacity: 1;
-}
+
+
+
 

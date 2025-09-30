@@ -33,17 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const DD = day;
 
     // Zeller’s Congruence
-    const d = (DD + Math.floor(26 * (MM + 1) / 10) + YY + Math.floor(YY / 4) +
-              Math.floor(CC / 4) + (5 * CC)) % 7;
+    let d = (DD + Math.floor(26 * (MM + 1) / 10) + YY + Math.floor(YY / 4) +
+             Math.floor(CC / 4) + (5 * CC)) % 7;
 
-    const dayOfWeek = d; // 0=Saturday, 1=Sunday, 2=Monday... (Zeller’s system)
+    // Adjust so that 0 = Sunday, 1 = Monday … 6 = Saturday
+    const dayOfWeek = (d + 6) % 7;
 
-    const maleNames = ["Kwame","Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi"];
-    const femaleNames = ["Ama","Akosua","Adwoa","Abenaa","Akua","Yaa","Afua"];
+    const maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    const femaleNames = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
 
     let akanName = gender === "male" ? maleNames[dayOfWeek] : femaleNames[dayOfWeek];
     result.textContent = `Your Akan name is: ${akanName}`;
   });
 });
-
-
